@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMCommsDemo", "MVVMCommsDemo\MVVMCommsDemo.csproj", "{68836C1F-C798-4DEC-8503-CE5E32002A9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zza.Data", "Zza.Data\Zza.Data.csproj", "{0B7114E1-1536-409B-8614-1FFB82AAD94F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68836C1F-C798-4DEC-8503-CE5E32002A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68836C1F-C798-4DEC-8503-CE5E32002A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68836C1F-C798-4DEC-8503-CE5E32002A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68836C1F-C798-4DEC-8503-CE5E32002A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {564F17F8-887F-4382-8A19-C110A0DC3CB9}
+	EndGlobalSection
+EndGlobal

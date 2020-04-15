@@ -1,0 +1,24 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Customers="clr-namespace:MVVMCommsDemo.Customers"
+        xmlns:local="clr-namespace:MVVMCommsDemo"
+        x:Class="MVVMCommsDemo.MainWindow"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type Customers:CustomerListViewModel}">
+            <Customers:CustomerListView />
+        </DataTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <ContentControl Content="{Binding CurrentViewModel}" />
+
+        <!--<Customers:CustomerListView />-->
+
+
+    </Grid>
+</Window>

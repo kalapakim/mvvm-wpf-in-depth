@@ -1,0 +1,10 @@
+To build and run the demos in this module, follow these steps:
+
+Create the Database - follow the instruction in the Setup.txt of the m3 folder.
+
+Open the solution and restore NuGet packages:
+- Make sure you have NuGet package restore enabled under Tools > Options > NuGet Package Manager > General (both check boxes)
+- Right click on the solution root in Solution Explorer and select Manage NuGet Packages for Solution...
+- The top of the dialog will have a yellow bar with a Restore button if packages are missing, click it to restore (requires internet connection)
+
+You should then be able to build and run the demos.

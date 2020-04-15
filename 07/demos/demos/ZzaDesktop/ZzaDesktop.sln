@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZzaDesktop", "ZzaDesktop\ZzaDesktop.csproj", "{9E72DDA3-1882-49C2-8BD5-5D02E9AAB572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zza.Data", "Zza.Data\Zza.Data.csproj", "{0B7114E1-1536-409B-8614-1FFB82AAD94F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E72DDA3-1882-49C2-8BD5-5D02E9AAB572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E72DDA3-1882-49C2-8BD5-5D02E9AAB572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E72DDA3-1882-49C2-8BD5-5D02E9AAB572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E72DDA3-1882-49C2-8BD5-5D02E9AAB572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7114E1-1536-409B-8614-1FFB82AAD94F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BF22D85-AD4C-4E2F-89A3-19CB42077FDA}
+	EndGlobalSection
+EndGlobal

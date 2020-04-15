@@ -1,0 +1,35 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cust="clr-namespace:MVVMHookupDemo.Customers"
+             x:Class="MVVMHookupDemo.Customers.CustomerListView"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300">
+    <UserControl.DataContext>
+        <cust:CustomerListViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <DataGrid x:Name="customerDataGrid"
+                  AutoGenerateColumns="False"
+                  EnableRowVirtualization="True"
+                  ItemsSource="{Binding Customers}"
+                  RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="firstNameColumn"
+                                    Binding="{Binding FirstName}"
+                                    Header="First Name"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="lastNameColumn"
+                                    Binding="{Binding LastName}"
+                                    Header="Last Name"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn x:Name="phoneColumn"
+                                    Binding="{Binding Phone}"
+                                    Header="Phone"
+                                    Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

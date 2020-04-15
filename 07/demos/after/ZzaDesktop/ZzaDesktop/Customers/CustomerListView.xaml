@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="ZzaDesktop.Customers.CustomerListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:ZzaDesktop.Customers"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded">
+            <b:CallMethodAction TargetObject="{Binding}" MethodName="LoadCustomers"/>
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Add Customer"
+                    Command="{Binding AddCustomerCommand}"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left" />
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Grid.Column="1">
+                <Label Content="Search:" />
+                <TextBox Text="{Binding SearchInput, UpdateSourceTrigger=PropertyChanged}"
+                         Width="150" />
+                <Button Content="X"
+                        Command="{Binding ClearSearchCommand}" />
+            </StackPanel>
+        </Grid>
+        <DataGrid ItemsSource="{Binding Customers}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding FullName}"
+                                    Width="*" />
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Place Order"
+                                    Command="{Binding DataContext.PlaceOrderCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding}"
+                                    Margin="5" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit"
+                                    Command="{Binding DataContext.EditCustomerCommand, 
+                                        RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding}"
+                                    Margin="5" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

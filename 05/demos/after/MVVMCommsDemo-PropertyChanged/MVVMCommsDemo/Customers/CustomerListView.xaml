@@ -1,0 +1,76 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cust="clr-namespace:MVVMCommsDemo.Customers"
+             xmlns:local="clr-namespace:MVVMCommsDemo"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             x:Class="MVVMCommsDemo.Customers.CustomerListView"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="CustomerTemplate">
+            <Border BorderThickness="3"
+                    BorderBrush="Blue">
+                <StackPanel>
+                    <TextBlock Text="{Binding FirstName}" />
+                    <TextBlock Text="{Binding LastName}" />
+                    <TextBlock Text="{Binding Phone}" />
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <UserControl.InputBindings>
+        <KeyBinding Key="D"
+                    Modifiers="Control"
+                    Command="{Binding DeleteCommand}" />
+    </UserControl.InputBindings>
+    <UserControl.DataContext>
+        <cust:CustomerListViewModel />
+    </UserControl.DataContext>
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded">
+            <b:CallMethodAction TargetObject="{Binding}" MethodName="LoadCustomers"/>
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Button Content="Delete"
+                Command="{Binding DeleteCommand}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Width="75" />
+        <Button Content="Change Customer"
+	                HorizontalAlignment="Left"
+	                Margin="80,0,0,0"
+	                VerticalAlignment="Top"
+	                Width="100"
+	                Click="OnChangeCustomer" />
+
+        <DataGrid x:Name="customerDataGrid"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Customers}"
+                  SelectedItem="{Binding SelectedCustomer}"
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding FirstName}"
+                                    Header="First Name"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn Binding="{Binding LastName}"
+                                    Header="Last Name"
+                                    Width="SizeToHeader" />
+                <DataGridTextColumn Binding="{Binding Phone}"
+                                    Header="Phone"
+                                    Width="SizeToHeader" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListBox ItemsSource="{Binding Customers}"
+                 ItemTemplate="{StaticResource CustomerTemplate}"
+                 Grid.Row="2" />
+    </Grid>
+</UserControl>
